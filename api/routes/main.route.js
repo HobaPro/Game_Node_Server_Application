@@ -5,8 +5,8 @@ const CMain = require("../controllers/main.controller");
 const authRoute = require("./auth.route");
 const progressRoute = require("./progress.route");
 
-router.get("/", (req, res) => {
-    res.status(200).send("Yes I am Working");
+router.get("/test", (req, res) => {
+    res.status(200).send("Yes I am Working..");
 })
 
 router.get("/api/connect", (req, res) => {
