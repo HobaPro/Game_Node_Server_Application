@@ -26,14 +26,14 @@ jobs:
       - run: npm test
 
       - name: Deploying Commands
-        uses: appleboy/ssh-action@master
-        with:
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          host: ${{ secrets.SERVER_IP }}
-          username: ${{ secrets.SERVER_USERNAME }}
-          scripts: |
-            pm2 delete all
-            cd /apps/TanProServer_2
-            git pull
-            npm install
-            pm2 start npm -- start
+        uses: appleboy/ssh-action@0.1.2
+          with:
+            key: ${{ secrets.SSH_PRIVATE_KEY }}
+            host: ${{ secrets.SERVER_IP }}
+            username: ${{ secrets.SERVER_USERNAME }}
+            scripts: |
+              pm2 delete all
+              cd /apps/TanProServer_2
+              git pull
+              npm install
+              pm2 start npm -- start
