@@ -23,13 +23,12 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Deploying Commands
-        uses: appleboy/ssh-action@0.1.2
+        run: |
+          ssh-keyscan $SSH_HOST >> ~/.ssh/known_hosts
+          ssh -i "$SSH_KEY" -p "$SSH_PORT" "$SSH_USER"@"$SSH_HOST" "pm2 delete all; cd /apps/TanProServer_2; git pull; npm install; pm2 start npm -- start"
         env:
           NAME: Mohab
           SSH_USER: ${{ secrets.SERVER_USERNAME }}
           SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
           SSH_HOST: ${{ secrets.SERVER_IP }}
           SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        run: |
-          ssh-keyscan $SSH_HOST >> ~/.ssh/known_hosts
-          ssh -i "$SSH_KEY" -p "$SSH_PORT" "$SSH_USER"@"$SSH_HOST" "pm2 delete all; cd /apps/TanProServer_2; git pull; npm install; pm2 start npm -- start"
