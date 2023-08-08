@@ -26,7 +26,7 @@ jobs:
       - run: npm test
 
       - name: Deploying Commands
-        uses: appleboy/ssh-action@0.1.2
+        uses: invi5H/ssh-action@v1
         with:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           host: ${{ secrets.SERVER_IP }}
