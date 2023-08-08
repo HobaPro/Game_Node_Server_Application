@@ -14,28 +14,26 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x, 16.x, 18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm test
 
-    -name: Deploying Commands
-      uses: appleboy/ssh-action@0.1.2
-      with:
-        key: ${{secrets.SSH_PRIVATE_KEY}}
-        host: ${{secrets.SERVER_IP}}
-        username: ${{secrets.SERVER_USERNAME}}
-        scripts: |
-          pm2 delete all
-          cd /apps/TanProServer_2
-          git pull
-          npm install
-          pm2 start npm -- start
+      - name: Deploying Commands
+        uses: appleboy/ssh-action@0.1.2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          scripts: |
+            pm2 delete all
+            cd /apps/TanProServer_2
+            git pull
+            npm install
+            pm2 start npm -- start
