@@ -37,4 +37,4 @@ jobs:
             cd /apps/TanProServer_2
             git pull
             npm install
-            pm2 start npm -- start
+            pm2 start index.js
