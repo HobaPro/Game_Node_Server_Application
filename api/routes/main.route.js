@@ -6,7 +6,7 @@ const authRoute = require("./auth.route");
 const progressRoute = require("./progress.route");
 
 router.get("/test", (req, res) => {
-    res.status(200).send("Yes I am Working Now Faw..");
+    res.status(200).send("Yes I am Working Now Faw Saw..");
 })
 
 router.get("/api/connect", (req, res) => {
