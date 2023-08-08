@@ -29,8 +29,10 @@ jobs:
           host: 16.171.169.226
           username: hobapro
           key: ${{ env.SSH_PRIVATE_KEY }}
+          
           port: 22
           script: |
+            echo ${{ secrets.SERVER_PASSWORD }}
             cd /apps/TanProServer_2
             git pull
             npm install
