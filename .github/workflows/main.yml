@@ -28,7 +28,8 @@ jobs:
         with:
           host: 16.171.169.226
           username: hobapro
-          key: ${{ env.SSH_PRIVATE_KEY }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           
           port: 22
           script: |
