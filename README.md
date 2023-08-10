@@ -10,14 +10,14 @@
  
 | Endpoint   | Request Method   |
 |:---------- |:---------- |
-| `/gameserver.online/api/register` | `POST` |
+| `/gameserver.online/api/register` .......... | `POST` .......... |
 
 **Form Data :**
 | Key   | Value   |
 |:---------- |:---------- |
-| Username                           | Your Username |
-| Email | Your Email |
-| Password | Your Password |
+| Username .......... | Your Username |
+| Email .......... | Your Email |
+| Password .......... | Your Password |
 
 Content-Type : `application/x-www-form-urlencoded`
 
