@@ -15,7 +15,7 @@
 **Form Data :**
 | Key   | Value   |
 |:---------------------------------------- |:------------------------------ |
-| Username | Your Username |
+| Username ------------------ | Your Username |
 | Email | Your Email |
 | Password | Your Password |
 
