@@ -5,12 +5,10 @@
 
 ### Registeration
 
-| Item              | In Stock | Price |
-| :---------------- | :------: | ----: |
-| Python Hat        |   True   | 23.99 |
-| SQL Hat           |   True   | 23.99 |
-| Codecademy Tee    |  False   | 19.99 |
-| Codecademy        |  False   | 42.99 |
+|Header1 |Header2  | Header3|
+--- | --- | ---|
+|data1|data2|data3|
+|data11|data12|data13|
 
 **Register :**
   * **Send Your Data to Register in Our Game as a Following :**
