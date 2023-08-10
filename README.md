@@ -9,12 +9,12 @@
   * **Send Your Data to Register in Our Game as a Following :**
  
 | Endpoint   | Request Method   |
-|:--------------------:|:--------------------:|
+|:----------:|:----------:|
 | `/gameserver.online/api/register` | `POST` |
 
 **Form Data :**
 | Key   | Value   |
-|:--------------------:|:--------------------:|
+|:----------:|:----------:|
 | Username | Your Username |
 | Email | Your Email |
 | Password | Your Password |
@@ -29,13 +29,13 @@ Content-Type : `application/x-www-form-urlencoded`
   * **You should Generate Access Token and Save it in Headers to have Authorization to Get Your Profile Data, Show Leaderboard, and Delete Your Account.**
 
 | Endpoint   | Request Method   |
-|:--------------------:|:--------------------:|
+|:----------:|:----------:|
 | `/gameserver.online/api/generate-access-token` | `POST` |
 
 **Form Data :**
 
 | Key   | Value   |
-|:--------------------:|:--------------------:|
+|:----------:|:----------:|
 | Email | Your Email |
 | Password | Your Password |
 
