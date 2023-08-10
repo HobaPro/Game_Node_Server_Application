@@ -9,7 +9,7 @@
   * **Send Your Data to Register in Our Game as a Following :**
 
 | Month    | Savings |
-| -------- | ------- |
+| -------------- | ------- |
 | January  | $250    |
 | February | $80     |
 | March    | $420    |
