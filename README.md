@@ -48,6 +48,17 @@
 |:----------:|:----------:|
 | `/gameserver.online/api/register` | `POST` |
 
+<table>
+    <tr>
+        <th>Endpoint</th>
+        <th>Request Method</th>
+    </tr>
+    <tr>
+        <td><code>/gameserver.online/api/register</code></td>
+        <td><code>POST</code></td>
+    </tr>
+</table>
+
 **Form Data :**
 | Key   | Value   |
 |:----------:|:----------:|
