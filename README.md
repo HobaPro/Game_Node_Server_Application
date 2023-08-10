@@ -8,13 +8,13 @@
 **Register :**
   * **Send Your Data to Register in Our Game as a Following :**
  
-|Endpoint |Request Method |
-|--------------------|--------------------|
+| Endpoint   | Request Method   |
+|:--------------------:|:--------------------:|
 | `/gameserver.online/api/register` | `POST` |
 
 **Form Data :**
-|Key |Value |
-|--------------------|--------------------|
+| Key   | Value   |
+|:--------------------:|:--------------------:|
 | Username | Your Username |
 | Email | Your Email |
 | Password | Your Password |
@@ -28,14 +28,14 @@ Content-Type : `application/x-www-form-urlencoded`
 **Generate Access Token :**
   * **You should Generate Access Token and Save it in Headers to have Authorization to Get Your Profile Data, Show Leaderboard, and Delete Your Account.**
 
-|Endpoint |Request Method |
-|--------------------|--------------------|
+| Endpoint   | Request Method   |
+|:--------------------:|:--------------------:|
 | `/gameserver.online/api/generate-access-token` | `POST` |
 
 **Form Data :**
 
-|Key |Value |
-|--------------------|--------------------|
+| Key   | Value   |
+|:--------------------:|:--------------------:|
 | Email | Your Email |
 | Password | Your Password |
 
@@ -45,30 +45,30 @@ Content-Type : `application/x-www-form-urlencoded`
 
 **Get Your Data :**
 
-|Endpoint |Request Method |
-|--------------------|--------------------|
+| Endpoint   | Request Method   |
+|:--------------------:|:--------------------:|
 | `/gameserver.online/api/getmydata` | `GET` |
 
 **Headers :**
   * Save Generated Token in Headers to have Authorization to Get Your Profile Data as Following :
 
-|Key |Value |
-|--------------------|--------------------|
+| Key   | Value   |
+|:--------------------:|:--------------------:|
 | authorization | Bearer {{GENERATED_KEY}} |
 
 ---
 
 **Delete Your Account :**
 
-|Endpoint |Request Method |
-|--------------------|--------------------|
+| Endpoint   | Request Method   |
+|:--------------------:|:--------------------:|
 | `/gameserver.online/api/deleteme` | `GET` |
 
 **Headers :**
   * Save Generated Token in Headers to have Authorization to can Delete Your Account as Following :
 
-|Key |Value |
-|--------------------|--------------------|
+| Key   | Value   |
+|:--------------------:|:--------------------:|
 | authorization | Bearer {{GENERATED_KEY}} |
 
 ---
