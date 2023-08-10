@@ -8,26 +8,11 @@
 **Register :**
   * **Send Your Data to Register in Our Game as a Following :**
  
-| Endpoint                                   | Request Method |
+| Endpoint <pre>                              </pre> | Request Method <pre>                              </pre> |
 |:------------------------------------------ |:-------------- |
 | `/gameserver.online/api/register`          | `POST`         |
 
-<pre>
-
-
-
-
-| Endpoint                                   | Request Method |
-|:------------------------------------------ |:-------------- |
-| `/gameserver.online/api/register`          | `POST`         |
-
-
-
-
-
-
- 
-</pre>
+<pre></pre>
 
 **Form Data :**
 | Key   | Value   |
