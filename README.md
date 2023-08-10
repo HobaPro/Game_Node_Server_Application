@@ -8,41 +8,11 @@
 **Register :**
   * **Send Your Data to Register in Our Game as a Following :**
 
-<table>
- <tr>
-     <th><i>Endpoint</i></th>
-     <td>POST https://data-consumer-app.azurewebsites.net/splunk/api/post/dacLogins</td>
- </tr>
- <tr>
-     <th style="background-color: #fff"><i>Description</th>
-     <td>Webhook to post data </td>
- </tr>
- <tr>
-    <th><i>Request Payload</th>
-    <td>
-    
- ```json
- {
-   "sid": "scheduler__admin__search__LoginTimelineB4980_1832_897",
-   "search_name": "LoginTimelineByDC",
-   "app": "search",
-   "owner": "admin",
-   "results_link": "http://v1host:8000/app/search/@go?sid=scheduler__admin__search__LoByDC_at_1630474980_1832",
-   "result": {
-     "LoginDate": "2021-08-18",
-     "DataCenter": "DC401",
-     "Company": "GARBLES00073",
-     "LoginCount": "11"
-   }
- }
- ``` 
- </td>
- </tr>
- <tr>
-    <th>Response Code</th>
-    <td>Created :201, ErrorCode(s) : Error: 500, InvalidData : 400 </td>
- </tr>
- </table>
+| Month    | Savings |
+| -------- | ------- |
+| January  | $250    |
+| February | $80     |
+| March    | $420    |
  
 | Endpoint   | Request Method   |
 |:----------:|:----------:|
