@@ -8,7 +8,7 @@
 <table>
    <thead>
       <tr>
-         <th>Header1</th>
+         <th>Header1                         </th>
          <th>Header2</th>
          <th>Header3</th>
       </tr>
