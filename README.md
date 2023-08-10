@@ -1,7 +1,26 @@
-| Header 1 | Header 2 |
+
+**API Documentation**
+
+**Server IP : [Link Text](16.171.169.226)**
+
+**Registeration :**
+  * **Send Your Data to Register in Our Game as a Following :**
+ 
+| Endpoint | Request Method |
 |----------|----------|
-| Content 1| Content 2|
-| Content 3| Content 4|
+| `/gameserver.online/api/register` | `POST` |
+
+**Form Data :**
+| Key | Value |
+|----------|----------|
+| Username | Your Username |
+| Email | Your Email |
+| Password | Your Password |
+
+Content-Type : `application/x-www-form-urlencoded`
+
+---
+
 ```javascript
 console.log('Hello, world!');
 ```
