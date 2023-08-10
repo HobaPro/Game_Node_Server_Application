@@ -9,7 +9,7 @@
   * **Send Your Data to Register in Our Game as a Following :**
  
 | Endpoint   | Request Method   |
-|:---------------------------------------- |:------------------------------ |
+| ---------------------------------------- | ------------------------------ |
 | `/gameserver.online/api/register` | `POST` |
 
 **Form Data :**
