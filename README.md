@@ -12,14 +12,14 @@
 |:----------:|:----------------:|
 | `/gameserver.online/api/register` | `POST` |
 
-<table width="50%" align="center">
+<table width="50%">
     <tr>
         <th>Endpoint</th>
         <th>Endpoint</th>
     </tr>
     <tr>
-        <td align="center">`/gameserver.online/api/register`</td>
-        <td align="center">`POST`</td>
+        <td align="center"><code>/gameserver.online/api/register</code></td>
+        <td align="center"><code>POST</code></td>
     </tr>
 </table>
 
