@@ -83,4 +83,29 @@ Content-Type : `application/x-www-form-urlencoded`
 
 Multiplayer Dedicated Server is Manage Multiplayer System in Game as Create, and Manage Sessions, Syncronize Players States etc.., and It a Separated From This Node.js Application, But It Connect with Node.js Application to Update Players Progression During Playing, as Player XP, Level, and Diamonds.
 
-/*--------------------------------------------------*/
+### Finish Game Rated Mode :
+
+| Endpoint | Request Method |
+|:---------- |:---------- |
+| `/gameserver.online/api/game/finish-rated` | `POST` |
+
+ ```json
+  {
+    "name": "John",
+    "age": 30,
+    "city": "New York"
+  }
+  ```
+
+**JSON Data :**
+<pre>
+ <code>
+  ```json
+  {
+    "name": "John",
+    "age": 30,
+    "city": "New York"
+  }
+  ```
+ </code>
+</pre>
