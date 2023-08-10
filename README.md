@@ -3,9 +3,9 @@
 
 **Server IP : [16.171.169.226](http://16.171.169.226)**
 
-### Registeration
+## Registeration
 
-#### Register :
+### Register :
   * **Send Your Data to Register in Our Game as a Following :**
  
 | Endpoint | Request Method |
@@ -23,9 +23,9 @@ Content-Type : `application/x-www-form-urlencoded`
 
 ---
 
-### Authorizations
+## Authorizations
 
-#### Generate Access Token :
+### Generate Access Token :
   * **You should Generate Access Token and Save it in Headers to have Authorization to Get Your Profile Data, Show Leaderboard, and Delete Your Account.**
 
 | Endpoint | Request Method |
@@ -43,7 +43,7 @@ Content-Type : `application/x-www-form-urlencoded`
 
 ---
 
-#### Get Your Data :
+### Get Your Data :
 
 | Endpoint | Request Method |
 |:---------- |:---------- |
@@ -60,7 +60,7 @@ Content-Type : `application/x-www-form-urlencoded`
 
 ---
 
-#### Delete Your Account :
+### Delete Your Account :
 
 | Endpoint | Request Method |
 |:---------- |:---------- |
@@ -76,3 +76,11 @@ Content-Type : `application/x-www-form-urlencoded`
 Content-Type : `application/x-www-form-urlencoded`
 
 ---
+
+## Multiplayer Dedicated Server
+
+## Summary :
+
+Multiplayer Dedicated Server is Manage Multiplayer System in Game as Create, and Manage Sessions, Syncronize Players States etc.., and It a Separated From This Node.js Application, But It Connect with Node.js Application to Update Players Progression During Playing, as Player XP, Level, and Diamonds.
+
+/*--------------------------------------------------*/
