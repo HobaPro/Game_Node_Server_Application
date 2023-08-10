@@ -1,16 +1,16 @@
 
-**API Documentation**
+# API Documentation
 
 **Server IP : [Link Text](16.171.169.226)**
 
-**Registeration :**
+### Registeration :
   * **Send Your Data to Register in Our Game as a Following :**
  
 | Endpoint | Request Method |
 |----------|----------|
 | `/gameserver.online/api/register` | `POST` |
 
-**Form Data :**
+### Form Data :
 | Key | Value |
 |----------|----------|
 | Username | Your Username |
@@ -19,7 +19,7 @@
 
 Content-Type : `application/x-www-form-urlencoded`
 
-***
+---
 
 ```javascript
 console.log('Hello, world!');
