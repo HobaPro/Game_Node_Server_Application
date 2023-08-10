@@ -5,7 +5,7 @@
 
 ### Registeration
 
-**Register :**
+#### Register :
   * **Send Your Data to Register in Our Game as a Following :**
  
 | Endpoint | Request Method |
@@ -25,7 +25,7 @@ Content-Type : `application/x-www-form-urlencoded`
 
 ### Authorizations
 
-**Generate Access Token :**
+#### Generate Access Token :
   * **You should Generate Access Token and Save it in Headers to have Authorization to Get Your Profile Data, Show Leaderboard, and Delete Your Account.**
 
 | Endpoint | Request Method |
@@ -43,7 +43,7 @@ Content-Type : `application/x-www-form-urlencoded`
 
 ---
 
-**Get Your Data :**
+#### Get Your Data :
 
 | Endpoint | Request Method |
 |:---------- |:---------- |
@@ -60,7 +60,7 @@ Content-Type : `application/x-www-form-urlencoded`
 
 ---
 
-**Delete Your Account :**
+#### Delete Your Account :
 
 | Endpoint | Request Method |
 |:---------- |:---------- |
