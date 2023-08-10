@@ -12,8 +12,6 @@
 |:---------- |:---------- |
 | `/gameserver.online/api/register` | `POST` |
 
-<pre></pre>
-
 **Form Data :**
 | Key | Value |
 |:---------- |:---------- |
@@ -23,7 +21,7 @@
 
 Content-Type : `application/x-www-form-urlencoded`
 
-----------------------------------------------------------------------
+---
 
 ### Authorizations
 
