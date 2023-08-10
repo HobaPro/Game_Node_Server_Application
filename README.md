@@ -50,8 +50,8 @@
 
 <table>
     <tr>
-        <td>Endpoint</td>
-        <td>Request Method</td>
+        <th><i>Endpoint</i></th>
+        <td><i>Request Method</i></td>
     </tr>
     <tr>
         <td><code>/gameserver.online/api/register</code></td>
