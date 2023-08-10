@@ -14,7 +14,7 @@
      <td>POST https://data-consumer-app.azurewebsites.net/splunk/api/post/dacLogins</td>
  </tr>
  <tr>
-     <th><i>Description</th>
+     <th style="background-color: #fff"><i>Description</th>
      <td>Webhook to post data </td>
  </tr>
  <tr>
