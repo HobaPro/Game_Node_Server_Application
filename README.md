@@ -12,7 +12,7 @@
 |:----------:|:----------------:|
 | `/gameserver.online/api/register` | `POST` |
 
-<table width="100%">
+<table width="2000px">
     <tr>
         <th>Endpoint</th>
         <th>Endpoint</th>
