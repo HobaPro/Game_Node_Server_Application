@@ -1,7 +1,7 @@
 
 # API Documentation
 
-**Server IP : [Link Text](16.171.169.226)**
+**Server IP : [16.171.169.226](http://16.171.169.226)**
 
 ### Registeration :
   * **Send Your Data to Register in Our Game as a Following :**
