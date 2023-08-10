@@ -32,14 +32,6 @@ Content-Type : `application/x-www-form-urlencoded`
 |:---------- |:---------- |
 | `/gameserver.online/api/generate-access-token` | `POST` |
 
-
-
-
-
-
-
-
-
 **Form Data :**
 
 | Key   | Value   |
