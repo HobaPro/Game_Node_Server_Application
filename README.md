@@ -89,23 +89,38 @@ Multiplayer Dedicated Server is Manage Multiplayer System in Game as Create, and
 |:---------- |:---------- |
 | `/gameserver.online/api/game/finish-rated` | `POST` |
 
- ```json
+**JSON Data :**
+
+```json
   {
-    "name": "John",
-    "age": 30,
-    "city": "New York"
+    "WinnerTeam": {
+       "players": ["Player 1", "Player 2", ...etc]
+    },
+    "LoserTeam": {
+       "players": ["Player 1", "Player 2", ...etc]
+    },
   }
-  ```
+```
+
+Content-Type : `application/json`
+
+### Finish Game UnRated Mode :
+
+| Endpoint | Request Method |
+|:---------- |:---------- |
+| `/gameserver.online/api/game/finish-unrated` | `POST` |
 
 **JSON Data :**
-<pre>
- <code>
-  ```json
+
+```json
   {
-    "name": "John",
-    "age": 30,
-    "city": "New York"
+    "WinnerTeam": {
+       "players": ["Player 1", "Player 2", ...etc]
+    },
+    "LoserTeam": {
+       "players": ["Player 1", "Player 2", ...etc]
+    },
   }
-  ```
- </code>
-</pre>
+```
+
+Content-Type : `application/json`
