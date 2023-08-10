@@ -7,32 +7,14 @@
 
 **Register :**
   * **Send Your Data to Register in Our Game as a Following :**
-
-| Item              | In Stock | Price |
-| :---------------- | :------: | ----: |
-| Python Hat        |   True   | 23.99 |
-| SQL Hat           |   True   | 23.99 |
-| Codecademy Tee    |  False   | 19.99 |
-| Codecademy Hoodie |  False   | 42.99 |
  
 | Endpoint   | Request Method   |
 |:---------------------------------------- |:------------------------------ |
 | `/gameserver.online/api/register` | `POST` |
 
-<table>
-    <tr style="background-color: #ddd">
-        <th><i>Endpoint</i></th>
-        <th><i>Request Method</i></th>
-    </tr>
-    <tr>
-        <td><code>/gameserver.online/api/register</code></td>
-        <td><code>POST</code></td>
-    </tr>
-</table>
-
 **Form Data :**
 | Key   | Value   |
-|:----------:|:----------:|
+|:---------------------------------------- |:------------------------------ |
 | Username | Your Username |
 | Email | Your Email |
 | Password | Your Password |
