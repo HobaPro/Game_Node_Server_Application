@@ -17,7 +17,9 @@
 
 
 
-
+| Endpoint                                   | Request Method |
+|:------------------------------------------ |:-------------- |
+| `/gameserver.online/api/register`          | `POST`         |
 
 
 
