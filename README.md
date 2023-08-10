@@ -49,9 +49,9 @@
 | `/gameserver.online/api/register` | `POST` |
 
 <table>
-    <tr>
+    <tr style="background-color: #ddd">
         <th><i>Endpoint</i></th>
-        <td><i>Request Method</i></td>
+        <th><i>Request Method</i></th>
     </tr>
     <tr>
         <td><code>/gameserver.online/api/register</code></td>
