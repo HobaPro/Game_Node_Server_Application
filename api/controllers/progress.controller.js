@@ -16,9 +16,9 @@ async function FinishGameRatedMode(req, res){
             return;
         }
 
-        const { WinnerTeam, LosersTeam } = req.body;
+        const { WinnerTeam, LoserTeam } = req.body;
 
-        const all = WinnerTeam.players.concat(LosersTeam.players);
+        const all = WinnerTeam.players.concat(LoserTeam.players);
 
         const players = await User.find({ Username: { $in: all } }, "Username Level Score Diamonds");
 
@@ -80,9 +80,9 @@ async function FinishGameUnRatedMode(req, res){
             return;
         }
 
-        const { WinnerTeam, LosersTeam } = req.body;
+        const { WinnerTeam, LoserTeam } = req.body;
 
-        const all = WinnerTeam.players.concat(LosersTeam.players);
+        const all = WinnerTeam.players.concat(LoserTeam.players);
 
         const players = await User.find({ Username: { $in: all } }, "Username Level Score");
 

@@ -1,6 +1,7 @@
 const router = require("express").Router();
 
 const CMain = require("../controllers/main.controller");
+const CAuth = require("../controllers/auth.controller");
 
 const authRoute = require("./auth.route");
 const progressRoute = require("./progress.route");
@@ -16,7 +17,7 @@ router.get("/connect", (req, res) => {
         Message: "You are Connected with Our Server.",
     });
 })
-router.get("/getplayers", CMain.GetPlayers);
+router.get("/leaderboard", CMain.Leaderboard);
 
 router.use(authRoute);
 router.use(progressRoute);

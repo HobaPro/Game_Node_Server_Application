@@ -10,12 +10,12 @@ const User = require("../models/auth.model");
 async function Register(req, res){
     try{
 
-        const { Username, Email, Password } = req.query;
-
         if(!DB.IsConnected){
             res.status(400).send({Success: false, StatusCode: 400, Data: null, Message: "Connection Error"});
             return;
         }
+
+        const { Username, Email, Password } = req.body;
 
         if(!UsernameValidation(Username)){
 
@@ -170,6 +170,7 @@ async function GetUser(req, res){
 /* Generate Access Token Controller */
 async function GenerateAccessToken(req, res){
     try{
+        
         if(!DB.IsConnected){
 
             res.status(500).send({
@@ -180,7 +181,7 @@ async function GenerateAccessToken(req, res){
             return;
         }
 
-        const { Email, Password } = req.query;
+        const { Email, Password } = req.body;
 
         const user = await User.findOne({Email: Email});
 
@@ -240,8 +241,6 @@ async function GenerateAccessToken(req, res){
 /* This Controller Check if User have Authorize to Get him Data. */
 function CheckUserAuthorization(req, res, next)
 {
-    res.contentType('application/json');
-
     try{
         //Get Token From Request Header
         const authHeader = req.headers["authorization"];

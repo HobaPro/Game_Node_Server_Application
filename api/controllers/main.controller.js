@@ -2,7 +2,7 @@ const DB = require("../db/db");
 
 const User = require("../models/auth.model");
 
-async function GetPlayers(req, res){
+async function Leaderboard(req, res){
     try{
         if(!DB.IsConnected){
             res.status(500).send({
@@ -13,7 +13,9 @@ async function GetPlayers(req, res){
             return;
         }
 
-        const players = await User.find().sort({Score: -1});
+        const { PaginateParameter } = req.query;
+
+        const players = await User.find({}, "Username Level Score Diamonds -_id").sort({Score: -1}).skip( ((PaginateParameter * 10) - 10) ).limit(10);
 
         res.status(200).send({
             Success: true,
@@ -34,5 +36,5 @@ async function GetPlayers(req, res){
 }
 
 module.exports = {
-    GetPlayers,
+    Leaderboard,
 }
