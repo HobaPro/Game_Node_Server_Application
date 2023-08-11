@@ -2,184 +2,133 @@ const DB = require("../db/db");
 
 const User = require("../models/auth.model");
 
-async function IWonRated(req, res){
+/* This Controller Start After End the Game to Handle Players (Winners, and Losers) Progressions in Rated Mode */
+async function FinishGameRatedMode(req, res){
     try{
+
         if(!DB.IsConnected){
-            res.status(400).send({Success: false, StatusCode: 400, Data: null, Message: "Connection Error"});
-            return;
-        }
-
-        const user = await User.findById(req.body.ID);
-
-        if(!user){
-            res.status(400).send({Success: false, StatusCode: 400, Data: null, Message: "User Error"});
+            res.status(500).send({
+                Success: false,
+                Data: null,
+                Message: "Connection Error",
+            });
 
             return;
         }
 
-        /*const newLevel = {
-            Number: req.body.LevelNumber,
-            Xp: req.body.Xp,
-        };*/
+        const { WinnerTeam, LosersTeam } = req.body;
 
-        const newProgress = LevelUp(user.Level, 3);
+        const all = WinnerTeam.players.concat(LosersTeam.players);
 
-        user.Level = newProgress;
+        const players = await User.find({ Username: { $in: all } }, "Username Level Score Diamonds");
 
-        user.Score = (((user.Level.Number - 1) * 10) + user.Level.Xp);
+        if(players.length <= 0){
 
-        user.Diamonds += 3;
+            res.status(404).send({
+                Success: false,
+                Data: null,
+                Message: "Faild to Get Players to Up their Score, Players not Found.",
+            });
 
-        await user.save();
+            return;
+        }
+
+        for(let i = 0; i < players.length; i++){
+
+            const newProgress = LevelUp(players[i].Level, 3);
+
+            players[i].Level = newProgress;
+
+            players[i].Score = (((players[i].Level.Number - 1) * 10) + players[i].Level.Xp);
+
+            players[i].Diamonds = i < WinnerTeam.players.length ? players[i].Diamonds + 3 : (players[i].Diamonds >= 1 ? players[i].Diamonds - 1 : 0);
+
+            await players[i].save();
+        }
 
         res.status(200).send({
             Success: true,
-            StatusCode: 200,
             Data: {
-                Level: user.Level,
-                Diamonds: user.Diamonds,
+                players,
             },
-            Message: ""
+            Message: "Congratulations, Winner's XP, and Score is Up, and you have +3 Diamonds :)"
         });
     }
     catch(error){
-        res.status(200).send({Success: false, StatusCode: 400, Data: null, Message: "Server Error Please Try Again Later"});
-        throw new Error(error);
+        res.status(200).send({
+            Success: false,
+            Data: null,
+            Message: "Server Error Please Try Again Later",
+        });
+
+        console.log(error);
     }
 }
+/* ----------------------- */
 
-async function IWonUnrated(req, res){
+/* This Controller Start After End the Game to Handle Players (Winners, and Losers) Progressions in Unrated Mode */
+async function FinishGameUnRatedMode(req, res){
     try{
         if(!DB.IsConnected){
-            res.status(400).send({Success: false, StatusCode: 400, Data: null, Message: "Connection Error"});
-            return;
-        }
 
-        const user = await User.findById(req.body.ID);
-
-        if(!user){
-            res.status(400).send({Success: false, StatusCode: 400, Data: null, Message: "User Error"});
+            res.status(500).send({
+                Success: false,
+                Data: null,
+                Message: "Connection Error",
+            });
 
             return;
         }
 
-        /*const newLevel = {
-            Number: req.body.LevelNumber,
-            Xp: req.body.Xp,
-        };*/
+        const { WinnerTeam, LosersTeam } = req.body;
 
-        const newProgress = LevelUp(user.Level, 3);
+        const all = WinnerTeam.players.concat(LosersTeam.players);
 
-        user.Level = newProgress;
+        const players = await User.find({ Username: { $in: all } }, "Username Level Score");
 
-        user.Score = (((user.Level.Number - 1) * 10) + user.Level.Xp);
+        if(players.length <= 0){
+            res.status(404).send({
+                Success: false,
+                Data: null,
+                Message: "Faild to Get Players to Up their Score, Players not Found.",
+            });
 
-        await user.save();
+            return;
+        }
+
+        for(let i = 0; i < players.length; i++){
+            const newProgress = LevelUp(players[i].Level, 3);
+
+            players[i].Level = newProgress;
+
+            players[i].Score = (((players[i].Level.Number - 1) * 10) + players[i].Level.Xp);
+
+            await players[i].save();
+        }
 
         res.status(200).send({
             Success: true,
-            StatusCode: 200,
             Data: {
-                Level: user.Level,
+                players,
             },
-            Message: ""
+            Message: "Congratulations, Your XP, and Score is Up :)",
         });
     }
     catch(error){
-        res.status(200).send({Success: false, StatusCode: 400, Data: null, Message: "Server Error Please Try Again Later"});
-        throw new Error(error);
-    }
-}
-
-async function ILostRated(req, res){
-    try{
-        if(!DB.IsConnected){
-            res.status(400).send({Success: false, StatusCode: 400, Data: null, Message: "Connection Error"});
-            return;
-        }
-
-        const user = await User.findById(req.body.ID);
-
-        if(!user){
-            res.status(400).send({Success: false, StatusCode: 400, Data: null, Message: "User Error"});
-
-            return;
-        }
-
-        /*const newLevel = {
-            Number: req.body.LevelNumber,
-            Xp: req.body.Xp,
-        };*/
-
-        const newProgress = LevelUp(user.Level, 1);
-
-        user.Level = newProgress;
-
-        user.Score = (((user.Level.Number - 1) * 10) + user.Level.Xp);
-
-        if (user.Diamonds > 0) user.Diamonds -= 1;
-
-        await user.save();
 
         res.status(200).send({
-            Success: true,
-            StatusCode: 200,
-            Data: {
-                Level: user.Level,
-                Diamonds: user.Diamonds,
-            },
-            Message: ""
+            Success: false,
+            Data: null,
+            Message: "Server Error Please Try Again Later",
         });
-    }
-    catch(error){
-        res.status(200).send({Success: false, StatusCode: 400, Data: null, Message: "Server Error Please Try Again Later"});
-        throw new Error(error);
+        
+        console.log(error);
     }
 }
+/* ----------------------- */
 
-async function ILostUnrated(req, res){
-    try{
-        if(!DB.IsConnected){
-            res.status(400).send({Success: false, StatusCode: 400, Data: null, Message: "Connection Error"});
-            return;
-        }
 
-        const user = await User.findById(req.body.ID);
-
-        if(!user){
-            res.status(400).send({Success: false, StatusCode: 400, Data: null, Message: "User Error"});
-
-            return;
-        }
-
-        /*const newLevel = {
-            Number: req.body.LevelNumber,
-            Xp: req.body.Xp,
-        };*/
-
-        const newProgress = LevelUp(user.Level, 1);
-
-        user.Level = newProgress;
-
-        user.Score = (((user.Level.Number - 1) * 10) + user.Level.Xp);
-
-        await user.save();
-
-        res.status(200).send({
-            Success: true,
-            StatusCode: 200,
-            Data: {
-                Level: user.Level,
-            },
-            Message: ""
-        });
-    }
-    catch(error){
-        res.status(200).send({Success: false, StatusCode: 400, Data: null, Message: "Server Error Please Try Again Later"});
-        throw new Error(error);
-    }
-}
-
+/* Method to Up Player XP */
 function LevelUp(level, xp){
 
     const newLevel = {
@@ -224,8 +173,6 @@ function LevelDown(level, xp){
 }
 
 module.exports = {
-    IWonRated,
-    IWonUnrated,
-    ILostRated,
-    ILostUnrated,
+    FinishGameRatedMode,
+    FinishGameUnRatedMode,
 }

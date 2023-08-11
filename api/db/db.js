@@ -14,22 +14,6 @@ async function Connect(){
     }
 }
 
-async function CreateConnection(){
-    try{
-        await mongoose.createConnection(process.env.DATABASE_URL, {
-            reconnectInterval: 5000,
-            reconnectTries: 60
-        });
-        /*await mongoose.createConnection(process.env.DATABASE_URL, {
-            reconnectInterval: 5000,
-            reconnectTries: 60
-            // add more config if you need
-          });*/
-    } catch(err){
-        throw new Error(err);
-    }
-}
-
 async function Disconnect(){
     try{
         await mongoose.disconnect();
@@ -40,7 +24,6 @@ async function Disconnect(){
 
 module.exports = {
     Connect,
-    CreateConnection,
     Disconnect,
 
     IsConnected,

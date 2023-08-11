@@ -5,7 +5,11 @@ const User = require("../models/auth.model");
 async function GetPlayers(req, res){
     try{
         if(!DB.IsConnected){
-            res.status(400).send({Success: false, StatusCode: 400, Data: null, Message: "Connection Error"});
+            res.status(500).send({
+                Success: false,
+                Data: null,
+                Message: "Connection Error",
+            });
             return;
         }
 
@@ -13,14 +17,19 @@ async function GetPlayers(req, res){
 
         res.status(200).send({
             Success: true,
-            StatusCode: 200,
             Data: players,
             Message: ""
         });
     }
     catch(error){
-        res.status(200).send({Success: false, StatusCode: 400, Data: null, Message: "Server Error Please Try Again Later"});
-        throw new Error(error);
+
+        res.status(500).send({
+            Success: false,
+            Data: null,
+            Message: "Server Error Please Try Again Later",
+        });
+
+        console.log(error);
     }
 }
 

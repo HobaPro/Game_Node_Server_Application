@@ -2,10 +2,7 @@ const router = require("express").Router();
 
 const CProgress = require("../controllers/progress.controller");
 
-router.put("/api/iwonrated", CProgress.IWonRated);
-router.put("/api/iwonunrated", CProgress.IWonUnrated);
-
-router.put("/api/ilostrated", CProgress.ILostRated);
-router.put("/api/ilostunrated", CProgress.ILostUnrated);
+router.put("/game/finish-rated", CProgress.FinishGameRatedMode);
+router.put("/game/finish-unrated", CProgress.FinishGameUnRatedMode);
 
 module.exports = router;
