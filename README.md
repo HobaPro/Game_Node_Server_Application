@@ -104,6 +104,20 @@ Content-Type : `application/x-www-form-urlencoded`
 
 ---
 
+## Leaderboard
+
+| **Endpoint** | **Request Method** |
+| --- | --- |
+| **`/gameserver.online/api/leaderboard`** | `GET` |
+
+**Parameters :**
+
+| **Key** | **Value** |
+| --- | --- |
+| PaginateParameter | Number |
+
+---
+
 ## Multiplayer Dedicated Server
 
 ## Summary :
