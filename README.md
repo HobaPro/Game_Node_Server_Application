@@ -114,7 +114,7 @@ Content-Type : `application/x-www-form-urlencoded`
 
 | **Key** | **Value** |
 | --- | --- |
-| PaginateParameter | Number |
+| PaginateParameter | 1 |
 
 ---
 
