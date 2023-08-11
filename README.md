@@ -1,3 +1,30 @@
+# Game Node.js Server Application
+
+The Multiplayer Game Server Application is a Node.js-based server designed to manage and facilitate the multiplayer aspects of an online game. This application allows players to register, authenticate, view leaderboards, and participate in multiplayer matches. It features a dedicated server to handle real-time gameplay and progression updates.
+
+## Features
+
+* **Player Registration:** Players can create accounts by registering with a unique username and password.
+* **Authorization:** Authenticated players can access their account data securely.
+* **Leaderboards:** Players can view and compete on the leaderboards to showcase their performance.
+* **Account Deletion:** Authenticated players can delete their accounts if needed.
+* **Multiplayer Management:** The dedicated server manages real-time multiplayer matches, ensuring fair gameplay.
+* **Progression Updates:** Winning and losing teams' data is communicated to the Node.js server for player progression updates.
+
+## Getting Started
+
+**Server IP : [16.171.169.226](http://16.171.169.226)**
+To send Web Request to it.
+
+## API Endpoints
+
+* `/gameserver.online/api/register`: Register a new player account.
+* `/gameserver.online/api/generate-access-token`: Authenticate a player and receive an access token.
+* `/gameserver.online/api/getmydata`: Player can get him account data if he have authorization.
+* `/gameserver.online/api/deleteme`: Player can delete him account if he have authorization.
+* `/gameserver.online/api/leaderboard`: Retrieve the current leaderboard data.
+* `/gameserver.online/api/game/finish-rated`: Receive match results from the dedicated server, and handle players progression in rated mode.
+* `/gameserver.online/api/game/finish-rated`: Receive match results from the dedicated server, and handle players progression in unrated mode.
 
 # API Documentation
 
